@@ -327,7 +327,7 @@ section {
 /* Bố cục 2 cột */
 .album-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 14px;
     align-items: start;
 }
@@ -340,6 +340,20 @@ section {
     display: flex;
     flex-direction: column;
     gap: 14px;
+}
+.album-photo--wide {
+    aspect-ratio: 4 / 3;
+}
+
+/* 4 ảnh xếp lưới 2x2 */
+.album-quad {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+}
+
+.album-quad .album-photo {
+    aspect-ratio: 1 / 1;
 }
 .album-col:last-child {
     align-self: center;
