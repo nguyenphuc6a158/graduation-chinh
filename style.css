@@ -1,0 +1,1047 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap");
+
+:root {
+    --cream: #fbf8f1;
+    --paper: #fffdf8;
+    --ink: #2f2a27;
+    --muted: #756e68;
+    --gold: #b8954d;
+    --gold-light: #d9bd78;
+    --line: #d7cec0;
+    --dark: #242224;
+    --green: #526b55;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: radial-gradient(
+            circle at 15% 10%,
+            rgba(216, 189, 120, 0.16),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 90% 35%,
+            rgba(82, 107, 85, 0.1),
+            transparent 28%
+        ),
+        var(--cream);
+    color: var(--ink);
+    font-family: "Montserrat", sans-serif;
+}
+
+.page {
+    width: min(100%, 720px);
+    margin: 0 auto;
+    overflow: hidden;
+    background: var(--paper);
+    box-shadow: 0 0 50px rgba(45, 37, 28, 0.08);
+}
+
+/* Decorative graduation-style geometry */
+.hero {
+    min-height: 100svh;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.02),
+            rgba(25, 23, 22, 0.72)
+        ),
+        url("./images/bia.jpg") center/cover;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+            circle at 50% 35%,
+            transparent 0 20%,
+            rgba(0, 0, 0, 0.14) 60%,
+            rgba(0, 0, 0, 0.35)
+        ),
+        linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, 0.72));
+}
+
+.hero-deco {
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    border: 1px solid rgba(255, 255, 255, 0.42);
+    transform: rotate(45deg);
+    top: -110px;
+    right: -95px;
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    padding: 34px 30px 54px;
+    text-align: center;
+    color: white;
+}
+
+.small-caps {
+    font-size: 10px;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    opacity: 0.85;
+}
+
+.script {
+    font-family: "Great Vibes", cursive;
+    font-weight: 400;
+}
+
+.hero h1 {
+    margin: 18px 0 10px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(54px, 14vw, 92px);
+    line-height: 0.82;
+    font-weight: 500;
+}
+
+.hero-name {
+    font-family: "Great Vibes", cursive;
+    font-size: clamp(34px, 9vw, 58px);
+    margin: 12px 0 20px;
+}
+
+.date {
+    display: inline-flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    letter-spacing: 0.25em;
+}
+
+.date::before,
+.date::after {
+    content: "";
+    width: 42px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.65);
+}
+
+.scroll-hint {
+    margin-top: 30px;
+    font-size: 9px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    opacity: 0.72;
+    animation: float 1.8s ease-in-out infinite;
+}
+
+@keyframes float {
+    50% {
+        transform: translateY(7px);
+    }
+}
+
+section {
+    padding: 60px 28px;
+}
+
+.intro {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.section-label {
+    font-size: 9px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+}
+
+.section-title {
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 42px;
+    font-weight: 500;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 18px auto 24px;
+    max-width: 300px;
+}
+
+.divider span {
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+}
+
+.diamond {
+    width: 8px;
+    height: 8px;
+    background: var(--gold);
+    transform: rotate(45deg);
+}
+
+.intro p {
+    max-width: 540px;
+    margin: 0 auto;
+    color: var(--muted);
+    line-height: 1.9;
+    font-size: 14px;
+}
+
+.quote {
+    margin-top: 30px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 25px;
+    font-style: italic;
+    line-height: 1.35;
+}
+
+/* Album tốt nghiệp */
+.album {
+    background: var(--paper);
+    padding: 20px 28px 60px;
+}
+
+.album-inner {
+    width: 100%;
+}
+/* Tân cử nhân */
+.graduate {
+    display: grid;
+    grid-template-columns: 52% 1fr;
+    gap: 18px; 
+    align-items: center;
+    padding: 20px 28px 60px;
+    background: var(--paper);
+}
+
+.graduate-photo img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    background: #ddd;
+}
+
+.graduate-title {
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.graduate-name {
+    margin: 2px 0 6px;
+    font-family: "Great Vibes", cursive;
+    font-size: 34px;
+    line-height: 1.1;
+    text-align: center;
+    color: var(--muted);
+}
+
+.graduate-text {
+    margin: 0;
+    font-family: "Be Vietnam Pro", "Segoe UI", Arial, sans-serif;
+    font-size: 10.5px;     /* đổi từ 11.5px */
+    text-align: center;    /* thêm dòng này */
+    line-height: 1.8;    /* đổi từ 1.9 */
+    color: var(--ink);
+}
+
+@media (max-width: 380px) {
+    .graduate {
+        gap: 16px;
+    }
+    .graduate-title {
+        font-size: 17px;
+    }
+    .graduate-name {
+        font-size: 28px;
+    }
+    .graduate-text {
+        font-size: 9.5px;
+    }
+}
+/* Tiêu đề + đường kẻ bên phải */
+.album-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.album-head h2 {
+    margin: 0;
+    font-family: "Dancing Script", cursive;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 1.1;
+    white-space: nowrap;
+    font-style: italic;
+}
+
+.album-rule {
+    flex: 1;
+    height: 1px;
+    background: var(--ink);
+}
+
+/* Bố cục 2 cột */
+.album-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    align-items: start;
+}
+.album-photo--fill {
+    flex: 1 1 0;
+    height: 0;
+    min-height: 200px;
+}
+.album-col {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.album-col:last-child {
+    align-self: center;
+}
+/* Chữ */
+.album-text {
+    margin: 0;
+    font-family: "Be Vietnam Pro", "Segoe UI", Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 400;
+    color: var(--ink);
+}
+
+/* Ảnh */
+.album-photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    background: #3a4150;
+}
+
+/* 3 ảnh xếp dính nhau ở cột trái */
+.album-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.album-stack .album-photo {
+    aspect-ratio: 16 / 9;   /* đổi từ 16 / 10 */
+}
+
+.album-photo--tall {
+    aspect-ratio: 2 / 3;
+}
+
+.album-photo--square {
+    aspect-ratio: 4 / 3;   /* đổi từ 4 / 5 */
+}
+
+@media (max-width: 360px) {
+    .album-text {
+        font-size: 12.5px;
+    }
+    .album-head h2 {
+        font-size: 26px;
+    }
+}
+
+/* Gallery */
+.gallery {
+    padding-top: 15px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 10px;
+    margin-top: 28px;
+}
+
+.photo {
+    min-height: 240px;
+    overflow: hidden;
+    position: relative;
+    background: #ddd;
+}
+
+.photo:nth-child(2) {
+    min-height: 320px;
+}
+.photo:nth-child(3) {
+    min-height: 320px;
+}
+.photo:nth-child(4) {
+    min-height: 240px;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.photo:hover img {
+    transform: scale(1.04);
+}
+
+.photo:first-child {
+    grid-row: span 2;
+}
+
+/* Schedule */
+.schedule {
+    background: #f6f2e9;
+}
+
+.timeline {
+    margin-top: 32px;
+    border-top: 1px solid var(--line);
+}
+
+.event {
+    display: grid;
+    grid-template-columns: 76px 1fr;
+    gap: 18px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.event-time {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 24px;
+}
+
+.event-title {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.event-note {
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+/* Memory */
+.memory {
+    position: relative;
+    padding: 60px 0;
+}
+
+.memory-band {
+    background: var(--dark);
+    color: white;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 28px 28px 28px calc(28px + 36% + 28px);
+    align-items: center;   /* thêm */
+    text-align: center;    /* thêm */
+}
+
+.memory-band h3 {
+    margin: 0;                     /* đổi từ margin: 0 0 10px */
+    transform-origin: center;      /* đổi từ left center */
+    font-family: "Great Vibes", cursive;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 1.1;
+    display: inline-block;
+    /* transform-origin: left center; */
+    animation: pulse-text 1.8s ease-in-out infinite;
+}
+
+@keyframes pulse-text {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.12);
+        opacity: 0.55;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .memory-band h3 {
+        animation: none;
+    }
+}
+.memory-heart {
+    font-family: serif;
+    font-size: 40px;
+    vertical-align: super;
+}
+
+.memory-band p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.72);
+    line-height: 1.8;
+    font-size: 12px;
+}
+
+/* Ảnh đè lên dải đen, thò ra trên và dưới */
+.memory-photo {
+    position: absolute;
+    left: 28px;
+    top: 24px;
+    bottom: 24px;
+    width: 36%;
+    z-index: 2;
+}
+
+.memory-photo img {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: #ddd;
+}
+
+
+@media (max-width: 480px) {
+    .memory-band {
+        padding-left: calc(28px + 36% + 18px);
+    }
+    .memory-band h3 {
+        font-size: 44px;
+    }
+}
+
+/* Form */
+.guestbook {
+    background: linear-gradient(
+            rgba(255, 253, 248, 0.94),
+            rgba(255, 253, 248, 0.94)
+        ),
+        url("https://images.unsplash.com/photo-1494386346843-e12284507169?auto=format&fit=crop&w=1200&q=80")
+            center/cover;
+}
+
+.form {
+    margin-top: 30px;
+}
+
+.field {
+    margin-bottom: 12px;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    border: 1px solid #aaa29a;
+    border-radius: 28px;
+    padding: 15px 17px;
+    background: rgba(255, 255, 255, 0.72);
+    outline: none;
+    font: 400 12px "Montserrat", sans-serif;
+    color: var(--ink);
+    transition: 0.2s;
+}
+
+textarea {
+    border-radius: 22px;
+    min-height: 105px;
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(184, 149, 77, 0.1);
+}
+
+select {
+    appearance: auto;
+}
+
+.submit {
+    width: 100%;
+    border: 1px solid #777;
+    border-radius: 28px;
+    padding: 15px 18px;
+    background: transparent;
+    color: var(--ink);
+    font: 500 12px "Montserrat", sans-serif;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.submit:hover {
+    background: var(--dark);
+    color: white;
+    border-color: var(--dark);
+}
+
+.submit:disabled {
+    opacity: 0.55;
+    cursor: wait;
+}
+
+.form-status {
+    min-height: 22px;
+    margin-top: 14px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.success {
+    color: var(--green);
+}
+.error {
+    color: #a14e4e;
+}
+
+.thank-you {
+    text-align: center;
+    margin-top: 28px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* Countdown */
+.countdown-section {
+    text-align: center;
+    padding-top: 25px;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.count-box {
+    min-width: 65px;
+    padding: 12px 8px;
+    border-bottom: 1px solid var(--gold);
+}
+
+.count-number {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 28px;
+}
+
+.count-label {
+    font-size: 8px;
+    letter-spacing: 0.16em;
+    color: var(--muted);
+    text-transform: uppercase;
+}
+
+footer {
+    padding: 25px;
+    text-align: center;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    color: #9b938b;
+}
+
+@media (min-width: 721px) {
+    body {
+        padding: 30px 0;
+    }
+    .page {
+        border-radius: 8px;
+    }
+}
+/* Lời mời + lịch */
+.invite {
+    --red: #a4463f;
+    text-align: center;
+    padding: 40px 20px 36px;
+    background: var(--paper);
+}
+
+.invite-title {
+    margin: 0;
+    font-family: "Dancing Script", cursive;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 36px;
+}
+
+.invite-sub {
+    margin: 6px 0 22px;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.invite-photos {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr 1fr;
+    gap: 6px;
+    align-items: center;
+}
+
+.invite-photos img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    background: #ddd;
+}
+
+.invite-photo--mid {
+    aspect-ratio: 3 / 4.4;
+}
+
+.invite-month {
+    margin: 26px 0 14px;
+    font-family: "Dancing Script", cursive;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 34px;
+}
+
+.invite-cal {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    row-gap: 14px;
+    max-width: 360px;
+    margin: 0 auto;
+    font-size: 13px;
+}
+
+.invite-dow {
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    margin-bottom: 4px;
+}
+
+.invite-day--active {
+    color: var(--red);
+    font-weight: 600;
+    position: relative;
+}
+
+.invite-day--active::before {
+    content: "🎓";
+    position: absolute;
+    left: 50%;
+    top: -16px;
+    transform: translateX(-50%);
+    font-size: 14px;
+}
+
+.invite-note {
+    margin: 26px 0 18px;
+    color: var(--red);
+    font-size: 13px;
+    line-height: 1.8;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.invite-date {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    max-width: 360px;
+    margin: 0 auto;
+    color: var(--red);
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+}
+
+.invite-date-col--mid {
+    border-left: 2px solid var(--ink);
+    border-right: 2px solid var(--ink);
+    padding: 4px 0;
+}
+
+.invite-date-big {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 40px;
+    line-height: 1.1;
+}
+
+.invite-school {
+    margin: 20px 0 0;
+    font-size: 12px;
+    color: var(--ink);
+}
+/* Địa điểm + sự kiện */
+.venue {
+    --red: #a4463f;
+    padding: 0;
+    text-align: center;
+    background: var(--paper);
+}
+
+.venue-info {
+    padding: 8px 28px 34px;
+}
+
+.venue-hall {
+    margin: 0 0 16px;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.venue-address {
+    margin: 0 0 20px;
+    font-size: 12.5px;
+    line-height: 1.7;
+    color: var(--ink);
+}
+
+.venue-map {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--ink);
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.venue-map:hover {
+    color: var(--red);
+}
+
+/* Ảnh ngang tràn hết chiều rộng thiệp */
+.venue-banner img {
+    display: block;
+    width: 100%;
+    /* aspect-ratio: 16 / 9;
+    object-fit: cover; */
+    background: #ddd;
+    height: auto;  
+}
+
+.venue-events {
+    padding: 30px 28px 56px;
+}
+
+.venue-events-title {
+    margin: 0;
+    font-family: "Dancing Script", cursive;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 1.1;
+}
+
+.venue-events-sub {
+    margin-top: 2px;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.venue-list {
+    width: fit-content;      /* thêm */
+    max-width: 100%;  
+    margin: 28px auto 26px;
+    text-align: left;
+}
+
+.venue-event {
+    display: grid;
+    grid-template-columns: 52px 44px auto;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 0;
+    font-size: 13px;
+}
+
+.venue-time {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.venue-dash {
+    height: 1px;
+    background: var(--ink);
+}
+
+.venue-thanks {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.8;
+    color: var(--muted);
+}
+.venue-map {
+    animation: pulse-icon 1.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .venue-map {
+        animation: none;
+    }
+}
+/* Tường lời nhắn */
+.wall {
+    --wall-h: 520px;
+    position: relative;
+    height: var(--wall-h);
+    margin-top: 28px;
+    overflow: hidden;
+    background: #f6f2e9;
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 10%, #000 90%, transparent);
+    mask-image: linear-gradient(to bottom, transparent, #000 10%, #000 90%, transparent);
+}
+
+.wall-empty {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0 24px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.wall-empty[hidden] {
+    display: none;
+}
+
+.wall-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 230px;
+    padding: 12px 14px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(45, 37, 28, 0.08);
+    animation: wall-fall 20s linear infinite;
+    will-change: transform;
+}
+
+@keyframes wall-fall {
+    from { transform: translateY(-170px); }
+    to   { transform: translateY(var(--wall-h)); }
+}
+
+/* Rê chuột hoặc chạm vào để dừng lại đọc */
+.wall:hover .wall-item,
+.wall:active .wall-item {
+    animation-play-state: paused;
+}
+
+.wall-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.wall-avatar {
+    flex: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.wall-meta {
+    min-width: 0;
+}
+
+.wall-name {
+    font-size: 12.5px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.wall-time {
+    font-size: 10px;
+    color: var(--muted);
+}
+
+.wall-msg {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--ink);
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+@media (max-width: 480px) {
+    .wall-item {
+        width: 200px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .wall {
+        overflow-y: auto;
+        -webkit-mask-image: none;
+        mask-image: none;
+    }
+    .wall-item {
+        position: relative;
+        animation: none;
+        margin: 10px;
+        left: auto !important;
+    }
+}
+.wall-item {
+    animation: none !important;
+}
