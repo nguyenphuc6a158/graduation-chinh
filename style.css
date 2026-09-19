@@ -1048,11 +1048,7 @@ footer {
     font-size: 12px;
     line-height: 1.6;
     color: var(--ink);
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    line-clamp: 4;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    overflow-wrap: anywhere;
 }
 
 @media (max-width: 480px) {
@@ -1076,4 +1072,27 @@ footer {
 }
 .wall-item {
     animation: none !important;
+}
+.wall-attend {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 2px 9px;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.wall-attend--yes {
+    background: rgba(82, 107, 85, 0.15);
+    color: var(--green);
+}
+
+.wall-attend--maybe {
+    background: rgba(184, 149, 77, 0.18);
+    color: #8a6a2b;
+}
+
+.wall-attend--no {
+    background: rgba(117, 110, 104, 0.15);
+    color: var(--muted);
 }

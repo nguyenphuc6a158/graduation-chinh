@@ -134,6 +134,11 @@ form.addEventListener("submit", async (event) => {
 const wall = document.getElementById("messageWall");
 const wallEmpty = document.getElementById("wallEmpty");
 const AVATAR_COLORS = ["#b8954d", "#526b55", "#a4463f", "#5b6f8f", "#8a6d9b", "#c0774d"];
+const ATTENDANCE_LABELS = {
+    yes: { text: "Sẽ đến", cls: "wall-attend--yes" },
+    maybe: { text: "Cố gắng đến", cls: "wall-attend--maybe" },
+    no: { text: "Gửi lời chúc", cls: "wall-attend--no" },
+};
 
 const SPEED = 45; // px/giây, mọi thẻ dùng chung một tốc độ
 const GAP = 14; // khoảng cách tối thiểu giữa các thẻ (px)
@@ -202,6 +207,15 @@ function buildItem(data) {
     const el = document.createElement("article");
     el.className = "wall-item";
     el.append(head, msg);
+
+    const att = ATTENDANCE_LABELS[data.attendance];
+    if (att) {
+        const badge = document.createElement("span");
+        badge.className = "wall-attend " + att.cls;
+        badge.textContent = att.text;
+        el.append(badge);
+    }
+
     return el;
 }
 
